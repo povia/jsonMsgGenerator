@@ -37,9 +37,9 @@ public class JsonGenerator {
 				object.put("Avg System Load", bean.getSystemLoadAverage());
 				object.put("Available Processers", bean.getAvailableProcessors());
 				object.put("System Architecture", bean.getArch());
-				object.put("Total Physical Memory", bean.getTotalPhysicalMemorySize());
-				object.put("Free Physical Memory", bean.getFreePhysicalMemorySize());
-				object.put("System CPU Load", bean.getSystemCpuLoad());
+				object.put("Total Physical Memory", (double)bean.getTotalPhysicalMemorySize()/1024/1024/1024);
+				object.put("Free Physical Memory", (double)bean.getFreePhysicalMemorySize()/1024/1024/1024);
+				object.put("System CPU Load", bean.getSystemCpuLoad()*100);
 				arr.add(object);
 				
 				object = new JSONObject();
